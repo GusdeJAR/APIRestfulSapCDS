@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: Build and Deploy CAP Project to Azure Static Web Apps
 
 on:
   push:
@@ -18,10 +18,10 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
+      - name: Install dependencies (including CDS)
         run: npm install
 
-      - name: Build with CDS CLI (using npx)
+      - name: Build project with CDS
         run: npx cds build --clean
 
       - name: Deploy to Azure Static Web Apps
@@ -30,5 +30,5 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "." # o el path de tu frontend
+          app_location: "." # raíz del proyecto (ajusta si tu app está en /app)
           output_location: "build"
