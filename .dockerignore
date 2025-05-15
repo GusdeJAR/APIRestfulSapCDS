@@ -1,0 +1,31 @@
+# Dependencias locales
+node_modules
+
+# Archivos de logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Configuraciones locales y editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Artefactos de build (si usas cds build)
+gen/
+build/
+dist/
+
+# Pruebas y documentación
+coverage/
+*.md
+
+# Docker/Docker Compose
+Dockerfile*
+docker-compose*.yml
+
+# Otros
+*.tgz
