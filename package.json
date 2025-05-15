@@ -34,5 +34,10 @@
       "db": "src/api/models",
       "srv": "src/api/routes"
     }
+  },
+  "requires": {
+     "auth": {
+      "kind": "basic"
+    }
   }
 }
