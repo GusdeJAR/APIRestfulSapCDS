@@ -6,7 +6,6 @@ WORKDIR /app
 COPY package*.json ./
 ENV NODE_ENV=production
 RUN npm ci                                     
-
 # 1.2 Copiar el resto del código y construir CAP
 COPY . .
 # Si usas cds build, descomenta la siguiente línea:
@@ -21,7 +20,8 @@ WORKDIR /app
 
 # 2.1 Variables de entorno por defecto
 ENV NODE_ENV=production \
-    PORT=4004
+    PORT=4004 \
+     CDS_REQUIRES_AUTH_KIND=basic
 
 # 2.2 Copiar artefactos desde builder
 COPY --from=builder /app /app
