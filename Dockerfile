@@ -8,7 +8,7 @@ ENV NODE_ENV=production
 RUN npm ci                                     
 # 1.2 Copiar el resto del código y construir CAP
 COPY . .
-# Si usas cds build, descomenta la siguiente línea:    
+# Si usas cds build, descomenta la siguiente línea         
 
 # 1.3 Eliminar dependencias de desarrollo
 RUN npm prune --production                        
@@ -20,7 +20,7 @@ WORKDIR /app
 # 2.1 Variables de entorno por defecto
 ENV NODE_ENV=production \
     PORT=4004 \
-     CDS_REQUIRES_AUTH_KIND=basic
+     CDS_REQUIRES_AUTH_KIND=mocked
 
 # 2.2 Copiar artefactos desde builder
 COPY --from=builder /app /app
