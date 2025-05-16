@@ -8,8 +8,7 @@ ENV NODE_ENV=production
 RUN npm ci                                     
 # 1.2 Copiar el resto del código y construir CAP
 COPY . .
-# Si usas cds build, descomenta la siguiente línea:
-    RUN npm run build     
+# Si usas cds build, descomenta la siguiente línea:    
 
 # 1.3 Eliminar dependencias de desarrollo
 RUN npm prune --production                        
