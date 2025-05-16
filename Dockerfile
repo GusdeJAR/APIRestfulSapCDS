@@ -9,7 +9,7 @@ RUN npm ci
 # 1.2 Copiar el resto del código y construir CAP
 COPY . .
 # Si usas cds build, descomenta la siguiente línea:
-RUN npx cds build --clean                    
+    RUN npm run build     
 
 # 1.3 Eliminar dependencias de desarrollo
 RUN npm prune --production                        
